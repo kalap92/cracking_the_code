@@ -1,9 +1,9 @@
-require_relative 'robot_reqursive'
+require_relative 'robot_dynamic'
+require_relative 'robot_recursive'
 require 'test/unit'
 require 'pry'
  
 class RobotTest < Test::Unit::TestCase
-
   def setup
     @map = 
       [
@@ -25,10 +25,15 @@ class RobotTest < Test::Unit::TestCase
 
   # tests
   #
-  def test_robot
+  def test_robot_recursive
     path = []
-    robot(@map, 8, 8, path)
+    robot_recursive(@map, 8, 8, path)
+    assert_equal(true, only_zeros_in_path(path, @map))
+  end
 
+  def test_robot_dynamic
+    path = []
+    robot_recursive(@map, 8, 8, path)
     assert_equal(true, only_zeros_in_path(path, @map))
   end
 end

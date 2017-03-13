@@ -7,12 +7,14 @@ class Point
   end
 end
 
-def robot(map, r, c, path)
+def robot_recursive(map, r, c, path)
   return false if r < 0 || c < 0 || map[r][c] == 1
   is_at_origin = r == 0 && c == 0
   
-  if is_at_origin || robot(map, r-1, c, path) || robot(map, r, c-1, path)
+  if is_at_origin || robot_recursive(map, r-1, c, path) || robot_recursive(map, r, c-1, path)
     path.push(Point.new(r,c))
     return true
   end
+
+  return false
 end
