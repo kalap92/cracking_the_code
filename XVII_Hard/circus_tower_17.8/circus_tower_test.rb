@@ -24,14 +24,14 @@ class CirrusTowerTest < Test::Unit::TestCase
     assert_equal(output, cirrus_tower(athletes))
 
     athletes = [
-      { weight: 81, height: 160 },
       { weight: 82, height: 190 },
       { weight: 83, height: 163 },
       { weight: 84, height: 180 },
-      { weight: 85, height: 164 },
+      { weight: 81, height: 160 },
       { weight: 86, height: 191 },
-      { weight: 87, height: 165 },
-      { weight: 88, height: 166 }
+      { weight: 88, height: 166 },
+      { weight: 85, height: 164 },
+      { weight: 87, height: 165 }
     ]
 
     output = [
